@@ -69,6 +69,7 @@ namespace ClubManagement.Modules
             this.tablePanel2.Controls.Add(this.groupControl2);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel2.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
@@ -76,17 +77,18 @@ namespace ClubManagement.Modules
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 33F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 168F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel2.Size = new System.Drawing.Size(784, 432);
+            this.tablePanel2.Size = new System.Drawing.Size(1045, 565);
             this.tablePanel2.TabIndex = 11;
             // 
             // groupControl1
             // 
             this.tablePanel2.SetColumn(this.groupControl1, 1);
             this.groupControl1.Controls.Add(this.tablePanel1);
-            this.groupControl1.Location = new System.Drawing.Point(39, 48);
+            this.groupControl1.Location = new System.Drawing.Point(52, 63);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
             this.tablePanel2.SetRow(this.groupControl1, 1);
-            this.groupControl1.Size = new System.Drawing.Size(698, 122);
+            this.groupControl1.Size = new System.Drawing.Size(931, 160);
             this.groupControl1.TabIndex = 9;
             this.groupControl1.Text = "Nowy użytkownik";
             // 
@@ -108,33 +110,36 @@ namespace ClubManagement.Modules
             this.tablePanel1.Controls.Add(this.txt_name);
             this.tablePanel1.Controls.Add(this.txt_login);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(2, 21);
+            this.tablePanel1.Location = new System.Drawing.Point(2, 26);
+            this.tablePanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 22F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 41F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 43F)});
-            this.tablePanel1.Size = new System.Drawing.Size(694, 99);
+            this.tablePanel1.Size = new System.Drawing.Size(927, 132);
             this.tablePanel1.TabIndex = 11;
             // 
             // labelControl2
             // 
             this.tablePanel1.SetColumn(this.labelControl2, 2);
-            this.labelControl2.Location = new System.Drawing.Point(194, 30);
+            this.labelControl2.Location = new System.Drawing.Point(259, 40);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
             this.tablePanel1.SetRow(this.labelControl2, 1);
-            this.labelControl2.Size = new System.Drawing.Size(32, 13);
+            this.labelControl2.Size = new System.Drawing.Size(38, 16);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Nazwa";
             // 
             // labelControl1
             // 
             this.tablePanel1.SetColumn(this.labelControl1, 1);
-            this.labelControl1.Location = new System.Drawing.Point(41, 30);
+            this.labelControl1.Location = new System.Drawing.Point(55, 40);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
             this.tablePanel1.SetRow(this.labelControl1, 1);
-            this.labelControl1.Size = new System.Drawing.Size(25, 13);
+            this.labelControl1.Size = new System.Drawing.Size(30, 16);
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Login";
             // 
@@ -142,10 +147,11 @@ namespace ClubManagement.Modules
             // 
             this.tablePanel1.SetColumn(this.btn_UserAdd, 4);
             this.btn_UserAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_UserAdd.ImageOptions.SvgImage")));
-            this.btn_UserAdd.Location = new System.Drawing.Point(496, 56);
+            this.btn_UserAdd.Location = new System.Drawing.Point(663, 73);
+            this.btn_UserAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_UserAdd.Name = "btn_UserAdd";
             this.tablePanel1.SetRow(this.btn_UserAdd, 2);
-            this.btn_UserAdd.Size = new System.Drawing.Size(131, 25);
+            this.btn_UserAdd.Size = new System.Drawing.Size(175, 33);
             this.btn_UserAdd.TabIndex = 3;
             this.btn_UserAdd.Text = "Zarejestruj";
             this.btn_UserAdd.Click += new System.EventHandler(this.btn_UserAdd_Click);
@@ -153,7 +159,8 @@ namespace ClubManagement.Modules
             // chck_admin
             // 
             this.tablePanel1.SetColumn(this.chck_admin, 3);
-            this.chck_admin.Location = new System.Drawing.Point(345, 59);
+            this.chck_admin.Location = new System.Drawing.Point(461, 80);
+            this.chck_admin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chck_admin.Name = "chck_admin";
             this.chck_admin.Properties.Caption = "Administrator";
             this.chck_admin.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
@@ -161,25 +168,27 @@ namespace ClubManagement.Modules
             this.chck_admin.Properties.ValueGrayed = 0;
             this.chck_admin.Properties.ValueUnchecked = 0;
             this.tablePanel1.SetRow(this.chck_admin, 2);
-            this.chck_admin.Size = new System.Drawing.Size(145, 19);
+            this.chck_admin.Size = new System.Drawing.Size(194, 20);
             this.chck_admin.TabIndex = 2;
             // 
             // txt_name
             // 
             this.tablePanel1.SetColumn(this.txt_name, 2);
-            this.txt_name.Location = new System.Drawing.Point(194, 58);
+            this.txt_name.Location = new System.Drawing.Point(259, 79);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_name.Name = "txt_name";
             this.tablePanel1.SetRow(this.txt_name, 2);
-            this.txt_name.Size = new System.Drawing.Size(145, 20);
+            this.txt_name.Size = new System.Drawing.Size(194, 22);
             this.txt_name.TabIndex = 1;
             // 
             // txt_login
             // 
             this.tablePanel1.SetColumn(this.txt_login, 1);
-            this.txt_login.Location = new System.Drawing.Point(41, 58);
+            this.txt_login.Location = new System.Drawing.Point(55, 79);
+            this.txt_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_login.Name = "txt_login";
             this.tablePanel1.SetRow(this.txt_login, 2);
-            this.txt_login.Size = new System.Drawing.Size(147, 20);
+            this.txt_login.Size = new System.Drawing.Size(196, 22);
             this.txt_login.TabIndex = 0;
             // 
             // groupControl2
@@ -188,10 +197,11 @@ namespace ClubManagement.Modules
             this.groupControl2.Appearance.Options.UseBackColor = true;
             this.tablePanel2.SetColumn(this.groupControl2, 1);
             this.groupControl2.Controls.Add(this.tablePanel3);
-            this.groupControl2.Location = new System.Drawing.Point(39, 249);
+            this.groupControl2.Location = new System.Drawing.Point(52, 325);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl2.Name = "groupControl2";
             this.tablePanel2.SetRow(this.groupControl2, 3);
-            this.groupControl2.Size = new System.Drawing.Size(698, 122);
+            this.groupControl2.Size = new System.Drawing.Size(931, 160);
             this.groupControl2.TabIndex = 10;
             this.groupControl2.Text = "Edycja użytkownika";
             // 
@@ -204,12 +214,13 @@ namespace ClubManagement.Modules
             this.tablePanel3.Controls.Add(this.btn_ResetPass);
             this.tablePanel3.Controls.Add(this.brn_archivize);
             this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel3.Location = new System.Drawing.Point(2, 21);
+            this.tablePanel3.Location = new System.Drawing.Point(2, 26);
+            this.tablePanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tablePanel3.Name = "tablePanel3";
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 36F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(694, 99);
+            this.tablePanel3.Size = new System.Drawing.Size(927, 132);
             this.tablePanel3.TabIndex = 12;
             // 
             // cb_usersList
@@ -217,10 +228,11 @@ namespace ClubManagement.Modules
             this.tablePanel3.SetColumn(this.cb_usersList, 0);
             this.tablePanel3.SetColumnSpan(this.cb_usersList, 2);
             this.cb_usersList.FormattingEnabled = true;
-            this.cb_usersList.Location = new System.Drawing.Point(3, 7);
+            this.cb_usersList.Location = new System.Drawing.Point(4, 11);
+            this.cb_usersList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_usersList.Name = "cb_usersList";
             this.tablePanel3.SetRow(this.cb_usersList, 0);
-            this.cb_usersList.Size = new System.Drawing.Size(688, 21);
+            this.cb_usersList.Size = new System.Drawing.Size(920, 24);
             this.cb_usersList.TabIndex = 6;
             // 
             // btn_ResetPass
@@ -228,10 +240,11 @@ namespace ClubManagement.Modules
             this.tablePanel3.SetColumn(this.btn_ResetPass, 0);
             this.btn_ResetPass.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_ResetPass.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ResetPass.ImageOptions.SvgImage")));
-            this.btn_ResetPass.Location = new System.Drawing.Point(3, 44);
+            this.btn_ResetPass.Location = new System.Drawing.Point(4, 59);
+            this.btn_ResetPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_ResetPass.Name = "btn_ResetPass";
             this.tablePanel3.SetRow(this.btn_ResetPass, 1);
-            this.btn_ResetPass.Size = new System.Drawing.Size(341, 47);
+            this.btn_ResetPass.Size = new System.Drawing.Size(456, 61);
             this.btn_ResetPass.TabIndex = 7;
             this.btn_ResetPass.Text = "  Zrestartuj hasło";
             this.btn_ResetPass.Click += new System.EventHandler(this.btn_ResetPass_Click);
@@ -241,23 +254,27 @@ namespace ClubManagement.Modules
             this.tablePanel3.SetColumn(this.brn_archivize, 1);
             this.brn_archivize.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.brn_archivize.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("brn_archivize.ImageOptions.SvgImage")));
-            this.brn_archivize.Location = new System.Drawing.Point(350, 44);
+            this.brn_archivize.Location = new System.Drawing.Point(468, 59);
+            this.brn_archivize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.brn_archivize.Name = "brn_archivize";
             this.tablePanel3.SetRow(this.brn_archivize, 1);
-            this.brn_archivize.Size = new System.Drawing.Size(341, 47);
+            this.brn_archivize.Size = new System.Drawing.Size(456, 61);
             this.brn_archivize.TabIndex = 8;
             this.brn_archivize.Text = "  Zarchiwizuj";
             this.brn_archivize.Click += new System.EventHandler(this.brn_archivize_Click);
             // 
             // ucSettingsUsers
             // 
+            this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel2);
             this.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ucSettingsUsers";
+            this.Size = new System.Drawing.Size(1045, 565);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

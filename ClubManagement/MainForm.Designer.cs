@@ -39,6 +39,7 @@ namespace ClubManagement
             this.Players = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Staff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Sponsors = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.Equipment = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.TabStatistic = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Statistic = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Table = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -50,7 +51,6 @@ namespace ClubManagement
             this.TabSettings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Profile = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.Users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.Equipment = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.fluentDesignFormContainer1.SuspendLayout();
@@ -103,25 +103,26 @@ namespace ClubManagement
             this.Equipment});
             this.TabClub.Expanded = true;
             resources.ApplyResources(this.TabClub, "TabClub");
-            this.TabClub.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabZamowienia.ImageOptions.Image")));
+            this.TabClub.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabClub.ImageOptions.Image")));
             this.TabClub.Name = "TabClub";
             // 
             // Players
             // 
             this.Players.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Players.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("DolaczDoSzamy.Appearance.Pressed.BackColor2")));
+            this.Players.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Players.Appearance.Pressed.BackColor2")));
             this.Players.Appearance.Pressed.Options.UseBackColor = true;
-            this.Players.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DolaczDoSzamy.ImageOptions.Image")));
+            this.Players.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Players.ImageOptions.Image")));
             this.Players.Name = "Players";
             this.Players.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Players, "Players");
+            this.Players.Click += new System.EventHandler(this.Players_Click);
             // 
             // Staff
             // 
             this.Staff.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Staff.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("ZamowSzame.Appearance.Pressed.BackColor2")));
+            this.Staff.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Staff.Appearance.Pressed.BackColor2")));
             this.Staff.Appearance.Pressed.Options.UseBackColor = true;
-            this.Staff.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ZamowSzame.ImageOptions.Image")));
+            this.Staff.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Staff.ImageOptions.Image")));
             this.Staff.Name = "Staff";
             this.Staff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Staff, "Staff");
@@ -129,12 +130,19 @@ namespace ClubManagement
             // Sponsors
             // 
             this.Sponsors.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Sponsors.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("HisoriaSzam.Appearance.Pressed.BackColor2")));
+            this.Sponsors.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Sponsors.Appearance.Pressed.BackColor2")));
             this.Sponsors.Appearance.Pressed.Options.UseBackColor = true;
-            this.Sponsors.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("HisoriaSzam.ImageOptions.Image")));
+            this.Sponsors.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Sponsors.ImageOptions.Image")));
             this.Sponsors.Name = "Sponsors";
             this.Sponsors.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Sponsors, "Sponsors");
+            // 
+            // Equipment
+            // 
+            this.Equipment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Equipment.ImageOptions.Image")));
+            this.Equipment.Name = "Equipment";
+            this.Equipment.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            resources.ApplyResources(this.Equipment, "Equipment");
             // 
             // TabStatistic
             // 
@@ -146,15 +154,15 @@ namespace ClubManagement
             this.Schedule});
             this.TabStatistic.Expanded = true;
             resources.ApplyResources(this.TabStatistic, "TabStatistic");
-            this.TabStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabAnkiety.ImageOptions.Image")));
+            this.TabStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabStatistic.ImageOptions.Image")));
             this.TabStatistic.Name = "TabStatistic";
             // 
             // Statistic
             // 
             this.Statistic.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Statistic.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("AnkietaDzisiejsza.Appearance.Pressed.BackColor2")));
+            this.Statistic.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Statistic.Appearance.Pressed.BackColor2")));
             this.Statistic.Appearance.Pressed.Options.UseBackColor = true;
-            this.Statistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AnkietaDzisiejsza.ImageOptions.Image")));
+            this.Statistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Statistic.ImageOptions.Image")));
             this.Statistic.Name = "Statistic";
             this.Statistic.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Statistic, "Statistic");
@@ -162,9 +170,9 @@ namespace ClubManagement
             // Table
             // 
             this.Table.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Table.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("AnkietyZaglosuj.Appearance.Pressed.BackColor2")));
+            this.Table.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Table.Appearance.Pressed.BackColor2")));
             this.Table.Appearance.Pressed.Options.UseBackColor = true;
-            this.Table.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AnkietyZaglosuj.ImageOptions.Image")));
+            this.Table.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Table.ImageOptions.Image")));
             this.Table.Name = "Table";
             this.Table.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Table, "Table");
@@ -172,9 +180,9 @@ namespace ClubManagement
             // Schedule
             // 
             this.Schedule.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Schedule.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("AnkietyArchiwalne.Appearance.Pressed.BackColor2")));
+            this.Schedule.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Schedule.Appearance.Pressed.BackColor2")));
             this.Schedule.Appearance.Pressed.Options.UseBackColor = true;
-            this.Schedule.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AnkietyArchiwalne.ImageOptions.Image")));
+            this.Schedule.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Schedule.ImageOptions.Image")));
             this.Schedule.Name = "Schedule";
             this.Schedule.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Schedule, "Schedule");
@@ -189,15 +197,15 @@ namespace ClubManagement
             this.DebtCollection});
             this.TabFinance.Expanded = true;
             resources.ApplyResources(this.TabFinance, "TabFinance");
-            this.TabFinance.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabRozliczenia.ImageOptions.Image")));
+            this.TabFinance.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabFinance.ImageOptions.Image")));
             this.TabFinance.Name = "TabFinance";
             // 
             // MembershipFees
             // 
             this.MembershipFees.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.MembershipFees.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("RozliczeniaOplac.Appearance.Pressed.BackColor2")));
+            this.MembershipFees.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("MembershipFees.Appearance.Pressed.BackColor2")));
             this.MembershipFees.Appearance.Pressed.Options.UseBackColor = true;
-            this.MembershipFees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RozliczeniaOplac.ImageOptions.Image")));
+            this.MembershipFees.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("MembershipFees.ImageOptions.Image")));
             this.MembershipFees.Name = "MembershipFees";
             this.MembershipFees.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.MembershipFees, "MembershipFees");
@@ -205,9 +213,9 @@ namespace ClubManagement
             // Budget
             // 
             this.Budget.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Budget.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("RozliczeniaRozliczenia.Appearance.Pressed.BackColor2")));
+            this.Budget.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Budget.Appearance.Pressed.BackColor2")));
             this.Budget.Appearance.Pressed.Options.UseBackColor = true;
-            this.Budget.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RozliczeniaRozliczenia.ImageOptions.Image")));
+            this.Budget.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Budget.ImageOptions.Image")));
             this.Budget.Name = "Budget";
             this.Budget.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Budget, "Budget");
@@ -215,10 +223,10 @@ namespace ClubManagement
             // DebtCollection
             // 
             this.DebtCollection.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DebtCollection.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("RozliczeniaWindykacja.Appearance.Pressed.BackColor2")));
+            this.DebtCollection.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("DebtCollection.Appearance.Pressed.BackColor2")));
             this.DebtCollection.Appearance.Pressed.Options.UseBackColor = true;
             this.DebtCollection.Enabled = false;
-            this.DebtCollection.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("RozliczeniaWindykacja.ImageOptions.Image")));
+            this.DebtCollection.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DebtCollection.ImageOptions.Image")));
             this.DebtCollection.Name = "DebtCollection";
             this.DebtCollection.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.DebtCollection, "DebtCollection");
@@ -256,13 +264,6 @@ namespace ClubManagement
             this.Users.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Users, "Users");
             this.Users.Click += new System.EventHandler(this.Users_Click);
-            // 
-            // Equipment
-            // 
-            this.Equipment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Equipment.ImageOptions.Image")));
-            this.Equipment.Name = "Equipment";
-            this.Equipment.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            resources.ApplyResources(this.Equipment, "Equipment");
             // 
             // MainForm
             // 

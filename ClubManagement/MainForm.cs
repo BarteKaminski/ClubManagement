@@ -79,6 +79,14 @@ namespace ClubManagement
             await LoadModuleAsync(ModulesInfo.GetItem("ucSettingsUsers"));
         }
 
+        private async void Players_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("ucClubPlayers") == null)
+            {
+                ModulesInfo.Add(new ModuleInfo("ucClubPlayers", "ClubManagement.Modules.ucClubPlayers"));
+            }
+            await LoadModuleAsync(ModulesInfo.GetItem("ucClubPlayers"));
+        }
         private void InitAdminModules()
         {
             isAdmin = DBHelper.SQL_int($"select Use_isAdmin from dbo.Users where Use_Id={loggedUserId}");
@@ -111,6 +119,7 @@ namespace ClubManagement
         {
             void RefreshData();
         }
+
 
     }
 }
