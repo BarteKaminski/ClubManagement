@@ -23,7 +23,7 @@ namespace ClubManagement
         {
             InitializeComponent();
             loggedUserId = userId;
-            InitAdminModules();          
+            InitAdminModules();
         }
         async Task LoadModuleAsync(ModuleInfo module)
         {
@@ -86,6 +86,14 @@ namespace ClubManagement
                 ModulesInfo.Add(new ModuleInfo("ucClubPlayers", "ClubManagement.Modules.ucClubPlayers"));
             }
             await LoadModuleAsync(ModulesInfo.GetItem("ucClubPlayers"));
+        }
+        private async void MembershipFees_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("ucMembershipFees") == null)
+            {
+                ModulesInfo.Add(new ModuleInfo("ucMembershipFees", "ClubManagement.Modules.ucMembershipFees"));
+            }
+            await LoadModuleAsync(ModulesInfo.GetItem("ucMembershipFees"));
         }
         private void InitAdminModules()
         {

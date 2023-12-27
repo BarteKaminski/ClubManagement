@@ -209,6 +209,7 @@ namespace ClubManagement
             this.MembershipFees.Name = "MembershipFees";
             this.MembershipFees.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.MembershipFees, "MembershipFees");
+            this.MembershipFees.Click += new System.EventHandler(this.MembershipFees_Click);
             // 
             // Budget
             // 

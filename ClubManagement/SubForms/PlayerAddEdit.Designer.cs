@@ -33,6 +33,7 @@ namespace ClubManagement.SubForms
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_photo = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
             this.lop_positions = new DevExpress.XtraEditors.LookUpEdit();
@@ -70,11 +71,11 @@ namespace ClubManagement.SubForms
             this.btn_cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
@@ -101,7 +102,6 @@ namespace ClubManagement.SubForms
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
             this.tablePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -149,6 +149,17 @@ namespace ClubManagement.SubForms
             this.groupControl3.Size = new System.Drawing.Size(194, 239);
             this.groupControl3.TabIndex = 7;
             this.groupControl3.Text = "Zdjęcie";
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Location = new System.Drawing.Point(2, 21);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.InitialImageOptions.Image = global::ClubManagement.Properties.Resources.customer_32x32;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.pictureEdit1.Size = new System.Drawing.Size(190, 216);
+            this.pictureEdit1.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -623,17 +634,6 @@ namespace ClubManagement.SubForms
             this.btn_save.Text = "Zapisz";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.Location = new System.Drawing.Point(2, 21);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.InitialImageOptions.Image = global::ClubManagement.Properties.Resources.customer_32x32;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(190, 216);
-            this.pictureEdit1.TabIndex = 0;
-            // 
             // PlayerAddEdit
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -654,6 +654,7 @@ namespace ClubManagement.SubForms
             this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
@@ -682,7 +683,6 @@ namespace ClubManagement.SubForms
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
             this.tablePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

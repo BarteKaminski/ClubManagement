@@ -125,7 +125,7 @@ namespace ClubManagement.Helpers
             }
             return 0;
         }
-        public static void InsertUpdate(string query)
+        public static bool InsertUpdate(string query)
         {
             try
             {
@@ -137,12 +137,14 @@ namespace ClubManagement.Helpers
                         com.CommandType = System.Data.CommandType.Text;
                         com.CommandText = query;
                         com.ExecuteNonQuery();
+                        return true;
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MainForm.ShowError("Błąd podczas łączenia z bazą danych");
+                return false;
             }
         }
         public static void AddEditPlayer(int mode, PlayerData player, int userId)
