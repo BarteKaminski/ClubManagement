@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Helpers\ExcelHelper.cs" />
     <Compile Include="Helpers\ImgHelper.cs" />
+    <Compile Include="Helpers\MailHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +116,12 @@
     </Compile>
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\PlayerData.cs" />
+    <Compile Include="Modules\ucDebtCollection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ucDebtCollection.Designer.cs">
+      <DependentUpon>ucDebtCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\ucMembershipFees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ucClubPlayers.resx">
       <DependentUpon>ucClubPlayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ucDebtCollection.resx">
+      <DependentUpon>ucDebtCollection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ucMembershipFees.resx">
       <DependentUpon>ucMembershipFees.cs</DependentUpon>

@@ -216,6 +216,7 @@ namespace ClubManagement
             this.Budget.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Budget.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Budget.Appearance.Pressed.BackColor2")));
             this.Budget.Appearance.Pressed.Options.UseBackColor = true;
+            this.Budget.Enabled = false;
             this.Budget.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Budget.ImageOptions.Image")));
             this.Budget.Name = "Budget";
             this.Budget.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -226,11 +227,11 @@ namespace ClubManagement
             this.DebtCollection.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.DebtCollection.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("DebtCollection.Appearance.Pressed.BackColor2")));
             this.DebtCollection.Appearance.Pressed.Options.UseBackColor = true;
-            this.DebtCollection.Enabled = false;
             this.DebtCollection.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DebtCollection.ImageOptions.Image")));
             this.DebtCollection.Name = "DebtCollection";
             this.DebtCollection.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.DebtCollection, "DebtCollection");
+            this.DebtCollection.Click += new System.EventHandler(this.DebtCollection_Click);
             // 
             // TabSettings
             // 
