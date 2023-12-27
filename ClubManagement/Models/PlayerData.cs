@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClubManagement.Models
 {
-   public class Player
+   public class PlayerData
     {
-        public Player(int id, string firstName, string lastName, DateTime dateOfBirth, string phone, string email, string country, string city, string postalCode, string street, int houseNumber, int flatNumber, string nick, int positionId, int number, string leg)
+        public PlayerData(int id, string firstName, string lastName, DateTime dateOfBirth, string phone, string email, string country, string city, string postalCode, string street, int houseNumber, int flatNumber, string nick, int positionId, int number, string leg, byte[] photo = null)
         {
             Id = id;
             FirstName = firstName;
@@ -26,6 +26,12 @@ namespace ClubManagement.Models
             PositionId = positionId;
             Number = number;
             Leg = leg;
+            Photo = photo;
+        }
+
+        public PlayerData()
+        {
+            
         }
 
         public int Id { get; set; }
@@ -45,6 +51,8 @@ namespace ClubManagement.Models
         public int PositionId { get; set; }
         public int Number { get; set; }
         public string Leg { get; set; }
+
+        public byte[] Photo { get; set; }
 
 
 

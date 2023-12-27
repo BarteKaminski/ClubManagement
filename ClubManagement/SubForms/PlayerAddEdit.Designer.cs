@@ -30,11 +30,9 @@ namespace ClubManagement.SubForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerAddEdit));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_photo = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
             this.lop_positions = new DevExpress.XtraEditors.LookUpEdit();
@@ -72,11 +70,11 @@ namespace ClubManagement.SubForms
             this.btn_cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
@@ -103,6 +101,7 @@ namespace ClubManagement.SubForms
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
             this.tablePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -143,24 +142,13 @@ namespace ClubManagement.SubForms
             // groupControl3
             // 
             this.tablePanel1.SetColumn(this.groupControl3, 0);
-            this.groupControl3.Controls.Add(this.svgImageBox1);
+            this.groupControl3.Controls.Add(this.pictureEdit1);
             this.groupControl3.Location = new System.Drawing.Point(3, 81);
             this.groupControl3.Name = "groupControl3";
             this.tablePanel1.SetRow(this.groupControl3, 1);
             this.groupControl3.Size = new System.Drawing.Size(194, 239);
             this.groupControl3.TabIndex = 7;
             this.groupControl3.Text = "Zdjęcie";
-            // 
-            // svgImageBox1
-            // 
-            this.svgImageBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.svgImageBox1.Location = new System.Drawing.Point(2, 21);
-            this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(190, 216);
-            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Zoom;
-            this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
-            this.svgImageBox1.TabIndex = 3;
-            this.svgImageBox1.Text = "svgImageBox1";
             // 
             // groupControl2
             // 
@@ -578,12 +566,17 @@ namespace ClubManagement.SubForms
             // 
             // lb_playerName
             // 
+            this.lb_playerName.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.lb_playerName.Appearance.Options.UseFont = true;
+            this.lb_playerName.Appearance.Options.UseTextOptions = true;
+            this.lb_playerName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lb_playerName.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tablePanel1.SetColumn(this.lb_playerName, 0);
-            this.lb_playerName.Location = new System.Drawing.Point(3, 18);
+            this.lb_playerName.Location = new System.Drawing.Point(3, 16);
             this.lb_playerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lb_playerName.Name = "lb_playerName";
             this.tablePanel1.SetRow(this.lb_playerName, 0);
-            this.lb_playerName.Size = new System.Drawing.Size(60, 13);
+            this.lb_playerName.Size = new System.Drawing.Size(75, 17);
             this.lb_playerName.TabIndex = 0;
             this.lb_playerName.Text = "Jan Kowalski";
             // 
@@ -630,6 +623,17 @@ namespace ClubManagement.SubForms
             this.btn_save.Text = "Zapisz";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Location = new System.Drawing.Point(2, 21);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.InitialImageOptions.Image = global::ClubManagement.Properties.Resources.customer_32x32;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.pictureEdit1.Size = new System.Drawing.Size(190, 216);
+            this.pictureEdit1.TabIndex = 0;
+            // 
             // PlayerAddEdit
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -650,7 +654,6 @@ namespace ClubManagement.SubForms
             this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
@@ -679,6 +682,7 @@ namespace ClubManagement.SubForms
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
             this.tablePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -691,7 +695,6 @@ namespace ClubManagement.SubForms
         private DevExpress.XtraEditors.SimpleButton btn_save;
         private DevExpress.XtraEditors.LabelControl lb_playerName;
         private DevExpress.XtraEditors.SimpleButton btn_photo;
-        private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.Utils.Layout.TablePanel tablePanel4;
         private DevExpress.XtraEditors.ComboBoxEdit cb_leg;
@@ -726,5 +729,6 @@ namespace ClubManagement.SubForms
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.LookUpEdit lop_positions;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

@@ -23,7 +23,7 @@ namespace ClubManagement.Modules
         }
         public void RefreshData()
         {
-           var playersDataTable = DBHelper.SQL_dt("select * from dbo.vPlayers");
+            var playersDataTable = DBHelper.SQL_dt("select * from dbo.vPlayers");
             gridControl1.DataSource = playersDataTable;
         }
 
@@ -41,8 +41,8 @@ namespace ClubManagement.Modules
         {
             var selectedRowId = gridView1.GetFocusedRowCellValue("Id");
             var addEditForm = new PlayerAddEdit(Convert.ToInt32(selectedRowId));
-           DialogResult dialogResult = addEditForm.ShowDialog();
-            if(dialogResult == DialogResult.OK)
+            DialogResult dialogResult = addEditForm.ShowDialog();
+            if (dialogResult == DialogResult.OK)
             {
                 RefreshData();
             }

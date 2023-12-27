@@ -71,11 +71,11 @@ namespace ClubManagement.Modules
             this.tablePanel2.SetColumn(this.gridControl1, 0);
             this.tablePanel2.SetColumnSpan(this.gridControl1, 2);
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 41);
+            this.gridControl1.Location = new System.Drawing.Point(3, 53);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.tablePanel2.SetRow(this.gridControl1, 1);
-            this.gridControl1.Size = new System.Drawing.Size(1091, 504);
+            this.gridControl1.Size = new System.Drawing.Size(1091, 492);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -195,7 +195,7 @@ namespace ClubManagement.Modules
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucClubPlayers";
             this.Size = new System.Drawing.Size(1097, 548);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();

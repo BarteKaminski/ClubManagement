@@ -145,7 +145,7 @@ namespace ClubManagement.Helpers
                 MainForm.ShowError("Błąd podczas łączenia z bazą danych");
             }
         }
-        public static void AddEditPlayer(int mode, Player player, int userId)
+        public static void AddEditPlayer(int mode, PlayerData player, int userId)
         {
             try
             {
@@ -180,6 +180,34 @@ namespace ClubManagement.Helpers
             catch (Exception)
             {
                 MainForm.ShowError("Błąd podczas łączenia z bazą danych");
+            }
+        }
+        public static bool AddFile(FileData file, int userId)
+        {
+            try
+            {
+                using (var con = new SqlConnection(connString))
+                {
+                    con.Open();
+                    SqlCommand com = new SqlCommand("AddFile", con);
+                    com.CommandType = CommandType.StoredProcedure;
+
+                    com.Parameters.AddWithValue("@Fil_Name", file.Fil_Name);
+                    com.Parameters.AddWithValue("@Fil_Size", file.Fil_Size);
+                    com.Parameters.AddWithValue("@Fil_Extension", file.Fil_Extension);
+                    com.Parameters.AddWithValue("@Fil_ObjectEnum", (object)file.Fil_ObjectEnum ?? DBNull.Value);
+                    com.Parameters.AddWithValue("@Fil_ObjectId", (object)file.Fil_ObjectId ?? DBNull.Value);
+                    com.Parameters.AddWithValue("@Fil_ObjectLp", (object)file.Fil_ObjectLp ?? DBNull.Value);
+                    com.Parameters.AddWithValue("@Fil_BinaryData", file.Fil_BinaryData);
+                    com.Parameters.AddWithValue("@UserId", userId);
+                    com.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                MainForm.ShowError("Błąd podczas łączenia z bazą danych");
+                return false;
             }
         }
     }

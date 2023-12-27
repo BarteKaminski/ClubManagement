@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ImgHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +109,8 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\FileData.cs" />
+    <Compile Include="Models\PlayerData.cs" />
     <Compile Include="Modules\ucClubPlayers.cs">
       <SubType>UserControl</SubType>
     </Compile>
