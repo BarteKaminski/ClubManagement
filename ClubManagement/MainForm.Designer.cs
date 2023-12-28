@@ -122,6 +122,7 @@ namespace ClubManagement
             this.Staff.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Staff.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Staff.Appearance.Pressed.BackColor2")));
             this.Staff.Appearance.Pressed.Options.UseBackColor = true;
+            this.Staff.Enabled = false;
             this.Staff.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Staff.ImageOptions.Image")));
             this.Staff.Name = "Staff";
             this.Staff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -132,6 +133,7 @@ namespace ClubManagement
             this.Sponsors.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Sponsors.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Sponsors.Appearance.Pressed.BackColor2")));
             this.Sponsors.Appearance.Pressed.Options.UseBackColor = true;
+            this.Sponsors.Enabled = false;
             this.Sponsors.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Sponsors.ImageOptions.Image")));
             this.Sponsors.Name = "Sponsors";
             this.Sponsors.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -139,6 +141,7 @@ namespace ClubManagement
             // 
             // Equipment
             // 
+            this.Equipment.Enabled = false;
             this.Equipment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Equipment.ImageOptions.Image")));
             this.Equipment.Name = "Equipment";
             this.Equipment.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -166,12 +169,14 @@ namespace ClubManagement
             this.Statistic.Name = "Statistic";
             this.Statistic.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Statistic, "Statistic");
+            this.Statistic.Click += new System.EventHandler(this.Statistic_Click);
             // 
             // Table
             // 
             this.Table.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Table.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Table.Appearance.Pressed.BackColor2")));
             this.Table.Appearance.Pressed.Options.UseBackColor = true;
+            this.Table.Enabled = false;
             this.Table.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Table.ImageOptions.Image")));
             this.Table.Name = "Table";
             this.Table.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -182,6 +187,7 @@ namespace ClubManagement
             this.Schedule.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Schedule.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Schedule.Appearance.Pressed.BackColor2")));
             this.Schedule.Appearance.Pressed.Options.UseBackColor = true;
+            this.Schedule.Enabled = false;
             this.Schedule.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Schedule.ImageOptions.Image")));
             this.Schedule.Name = "Schedule";
             this.Schedule.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
