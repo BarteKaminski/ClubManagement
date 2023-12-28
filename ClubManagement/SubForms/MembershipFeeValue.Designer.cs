@@ -90,6 +90,11 @@ namespace ClubManagement.SubForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinEdit1.Properties.IsFloatValue = false;
             this.spinEdit1.Properties.Mask.EditMask = "N00";
+            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.tablePanel1.SetRow(this.spinEdit1, 2);
             this.spinEdit1.Size = new System.Drawing.Size(310, 24);
             this.spinEdit1.TabIndex = 1;
