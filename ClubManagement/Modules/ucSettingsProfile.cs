@@ -34,10 +34,12 @@ namespace ClubManagement.Modules
             var error = UpdatePassword();
             if (error == "")
             {
+                DBHelper.WriteLog("Update password", 0, "Info", $"Zaktualizowano hasło dla użytkownika o ID: {loggedUserId}", loggedUserId);
                 ShowOk("Hasło zostało zaktualizowane");
             }
             else
             {
+                DBHelper.WriteLog("Update password", -1, "Error", $"Nie udało się zaktualizowano hasło dla użytkownika o ID: {loggedUserId} - {error}", loggedUserId);
                 ShowError(error);
             }
             txt_oldPass.Text = "";

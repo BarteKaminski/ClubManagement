@@ -177,10 +177,28 @@ namespace ClubManagement.Helpers
                     com.Parameters.AddWithValue("@userId", userId);
 
                     com.ExecuteNonQuery();
+                    if(mode == 1)
+                    {
+                        WriteLog("Add player", 0, "Info", $"Dodano zawodnika o ID: {player.Id}", userId);
+                    }
+                    else
+                    {
+                        WriteLog("Edit player", 0, "Info", $"Zaktualizowano zawodnika o ID: {player.Id}", userId);
+                    }
+               
                 }
             }
-            catch (Exception)
-            {
+            catch (Exception ex)
+            {   
+                if(mode == 1)
+                {
+                    WriteLog("Add player", -1, "Error", ex.ToString(), userId);
+                }
+                else
+                {
+                    WriteLog("Edit player", -1, "Error",$"ID: {player.Id}" + ex.ToString(), userId);
+                }
+                
                 MainForm.ShowError("Błąd podczas łączenia z bazą danych");
             }
         }
@@ -203,13 +221,39 @@ namespace ClubManagement.Helpers
                     com.Parameters.AddWithValue("@Fil_BinaryData", file.Fil_BinaryData);
                     com.Parameters.AddWithValue("@UserId", userId);
                     com.ExecuteNonQuery();
+                    WriteLog("Add file", 0, "Info", $"Dodano plik: {file.Fil_Name}", userId);
                     return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteLog("Add file", -1, "Error", ex.ToString(), userId);
+                MainForm.ShowError("Błąd podczas łączenia z bazą danych");
+                return false;
+            }
+        }
+        public static void WriteLog(string function, int result, string status, string message, int loggedUserId)
+        {
+            try
+            {
+                using (var con = new SqlConnection(connString))
+                {
+                    con.Open();
+                    SqlCommand com = new SqlCommand("WriteLog", con);
+                    com.CommandType = CommandType.StoredProcedure;
+
+                    com.Parameters.AddWithValue("@Log_Function", function);
+                    com.Parameters.AddWithValue("@Log_Result", result);
+                    com.Parameters.AddWithValue("@Log_Status", status);
+                    com.Parameters.AddWithValue("@Log_Message", message);
+                    com.Parameters.AddWithValue("@Log_UserCreated", loggedUserId);
+
+                    com.ExecuteNonQuery();
                 }
             }
             catch (Exception)
             {
                 MainForm.ShowError("Błąd podczas łączenia z bazą danych");
-                return false;
             }
         }
     }

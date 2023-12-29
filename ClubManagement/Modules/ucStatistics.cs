@@ -57,22 +57,31 @@ namespace ClubManagement.Modules
         }
         void UpdateChart(List<string> statisticTypes)
         {
-            chartControl1.Series.Clear();
-
-            foreach (string statisticType in statisticTypes)
+            try
             {
-                Series newSeries = new Series(statisticType, ViewType.Bar);
+                chartControl1.Series.Clear();
 
-                foreach (DataRow row in playersStatisticsDataTable.Rows)
+                foreach (string statisticType in statisticTypes)
                 {
-                    double value = Convert.ToDouble(row[translateStatisticToEnglish[statisticType]]);
-                    newSeries.Points.Add(new SeriesPoint(row["FirstName"] + " " + row["LastName"], value));
-                    newSeries.LegendText = statisticType;
+                    Series newSeries = new Series(statisticType, ViewType.Bar);
+
+                    foreach (DataRow row in playersStatisticsDataTable.Rows)
+                    {
+                        double value = Convert.ToDouble(row[translateStatisticToEnglish[statisticType]]);
+                        newSeries.Points.Add(new SeriesPoint(row["FirstName"] + " " + row["LastName"], value));
+                        newSeries.LegendText = statisticType;
+                    }
+
+
+                    chartControl1.Series.Add(newSeries);
                 }
-
-
-                chartControl1.Series.Add(newSeries);
             }
+            catch (Exception ex)
+            {
+                DBHelper.WriteLog("Update chart", -1, "Error", $"Błąd podczas tworzenia wykresu - {ex.ToString()}", loggedUserId);
+            }
+
+
 
         }
 
@@ -97,7 +106,14 @@ namespace ClubManagement.Modules
             string columnName = "PlS_" + e.Column.FieldName;
             int id = (int)gridView1.GetRowCellValue(e.RowHandle, "Id");
 
-            DBHelper.InsertUpdate($"update dbo.PlayersStatistics set {columnName} = {newValue} where PlS_Id = {id}");
+            if (DBHelper.InsertUpdate($"update dbo.PlayersStatistics set {columnName} = {newValue} where PlS_Id = {id}"))
+            {
+                DBHelper.WriteLog("Update statistic", 0, "Info", $"Zaktualizowano statystyki o ID: {id}, kolumne: {columnName} na wartość: {newValue}", loggedUserId);
+            }
+            else
+            {
+                DBHelper.WriteLog("Update statistic", -1, "Error", $"Nie udało się zaktualizować statystyki o ID: {id}, kolumny: {columnName} na wartość: {newValue}", loggedUserId);
+            }
             RefreshData();
             CheckedListBoxItemCollection items = ccb_statisticsTypes.Properties.Items;
             List<string> selectedStatisticTypes = new List<string>();
@@ -122,37 +138,57 @@ namespace ClubManagement.Modules
 
         private void btn_exportPdf_Click(object sender, EventArgs e)
         {
-            gridView1.OptionsPrint.AutoWidth = true;
-            gridView1.BestFitColumns();
-
-            gridControl1.Invoke(new Action(delegate ()
+            string filePath = "";
+            try
             {
-                string filePath = $@"C:\Users\Bartek\Desktop\Inż\Statistic\Tables\Statystyki_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf";
-                gridControl1.ExportToPdf(filePath);
-                System.Diagnostics.Process.Start(filePath);
-            }));
+                gridView1.OptionsPrint.AutoWidth = true;
+                gridView1.BestFitColumns();
+
+                gridControl1.Invoke(new Action(delegate ()
+                {
+                    filePath = $@"C:\Users\Bartek\Desktop\Inż\Statistic\Tables\Statystyki_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf";
+                    gridControl1.ExportToPdf(filePath);
+                    System.Diagnostics.Process.Start(filePath);
+                    DBHelper.WriteLog("Export table PDF", 0, "Info", $"Wyeksportowano tabelę statystk do {filePath}", loggedUserId);
+                }));
+            }
+            catch (Exception ex)
+            {
+                DBHelper.WriteLog("Export table PDF", -1, "Error", $"Błąd podczas eksportu tabeli statystk do {filePath} - {ex.ToString()}", loggedUserId);
+            }
+
         }
 
         private void btn_exportChart_Click(object sender, EventArgs e)
         {
-            PrintingSystem ps = new PrintingSystem();
-            PrintableComponentLink link = new PrintableComponentLink(ps);
-            link.Component = chartControl1;
-            link.Landscape = true; 
-
-           
-            link.Margins.Left = 10;
-            link.Margins.Right = 10;
-            link.Margins.Top = 10;
-            link.Margins.Bottom = 10;
-            link.PaperKind = System.Drawing.Printing.PaperKind.A4;
-
-            chartControl1.Invoke(new Action(delegate ()
+            string filePath = "";
+            try
             {
-                string filePath = $@"C:\Users\Bartek\Desktop\Inż\Statistic\Charts\Wykres_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf";
-                link.ExportToPdf(filePath);
-                System.Diagnostics.Process.Start(filePath);
-            }));
+                PrintingSystem ps = new PrintingSystem();
+                PrintableComponentLink link = new PrintableComponentLink(ps);
+                link.Component = chartControl1;
+                link.Landscape = true;
+
+
+                link.Margins.Left = 10;
+                link.Margins.Right = 10;
+                link.Margins.Top = 10;
+                link.Margins.Bottom = 10;
+                link.PaperKind = System.Drawing.Printing.PaperKind.A4;
+
+                chartControl1.Invoke(new Action(delegate ()
+                {
+                    filePath = $@"C:\Users\Bartek\Desktop\Inż\Statistic\Charts\Wykres_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf";
+                    link.ExportToPdf(filePath);
+                    System.Diagnostics.Process.Start(filePath);
+                    DBHelper.WriteLog("Export chart PDF", 0, "Info", $"Wyeksportowano wykres statystk do {filePath}", loggedUserId);
+                }));
+            }
+            catch (Exception ex)
+            {
+                DBHelper.WriteLog("Export chart PDF", -1, "Error", $"Błąd podczas eksportu wykresu statystk do {filePath} - {ex.ToString()}", loggedUserId);
+            }
+
         }
     }
 }

@@ -41,9 +41,13 @@ namespace ClubManagement
                 {
                     this.Show();
                 }
-                
+
             }
-            catch (Exception) { this.Show(); }
+            catch (Exception ex)
+            {
+                DBHelper.WriteLog("Read login data", -1, "Error", $"Błąd podczas odczytu zapisanych danych do logowania - {ex.ToString()}", 0); 
+                this.Show();
+            }
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -78,7 +82,7 @@ namespace ClubManagement
             }
         }
 
-       
+
 
         private void VerifyLogin(string login, string password, bool isPassHashed)
         {
@@ -119,22 +123,27 @@ namespace ClubManagement
 
                     if (error == -4)
                     {
+                        DBHelper.WriteLog("Login", -4, "Error", $"Nieprawidłowa wersja aplikacji - użytkownik: {login}", 0);
                         txt_info.Text = "Nieprawidłowa wersja aplikacji";
                     }
                     else if (error == -2)
                     {
+                        DBHelper.WriteLog("Login", -2, "Error", $"Nieprawidłowe dane logowania - użytkownik: {login}", 0);
                         txt_info.Text = "Nieprawidłowe dane logowania";
                     }
                     else if (error == -3)
                     {
+                        DBHelper.WriteLog("Login", -3, "Error", $"W celu rejestacji wpisz hasło - użytkownik: {login}", 0);
                         txt_info.Text = "W celu rejestacji wpisz hasło";
                     }
                     else if (error == 1)
                     {
+                        DBHelper.WriteLog("Login", 1, "Info", $"Hasło ustawione. Możesz się teraz zalogować - użytkownik: {login}", 0);
                         txt_info.Text = "Hasło ustawione. Możesz się teraz zalogować";
                     }
                     else if (error == -1)
                     {
+                        DBHelper.WriteLog("Login", -1, "Error", $"Użytkownik nieaktywny - użytkownik: {login}", 0);
                         txt_info.Text = "Użytkownik nieaktywny";
                     }
                     else if (error == 0)
@@ -147,17 +156,19 @@ namespace ClubManagement
                             saveData.pass = passwordHash;
                             XmlHelper.SaveLoginData(saveData);
                         }
-
+                    
                         //Otwieramy główne okno
                         int userId = Convert.ToInt32(dr[1]);
+                        DBHelper.WriteLog("Login", 0, "Info", $"Zalogowano użytkownika {login}", userId);
                         this.Hide();
                         var MainWindow = new MainForm(userId);
                         MainWindow.Closed += (s, args) => this.Close();
                         MainWindow.Show();
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    DBHelper.WriteLog("Login", -1, "Error", $"Błąd podczas logowania - {ex.ToString()}", 0);
                     txt_info.Text = "Błąd połączenia z bazą danych";
                 }
             }

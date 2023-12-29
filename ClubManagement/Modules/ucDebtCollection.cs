@@ -39,15 +39,18 @@ namespace ClubManagement.Modules
                 mail.SendMail(row["Email"].ToString(), "ClubManagementMANS@outlook.com", "", body, topic, ref error);
                 if(error != "")
                 {
+                    DBHelper.WriteLog("Send mail", -1, "Error", error, loggedUserId);
                     MainForm.ShowError(error);
                 }
                 else
                 {
+                    DBHelper.WriteLog("Send mail", 0, "Info", $"Wysłano mail do {row["Email"].ToString()}", loggedUserId);
                     sentMails++;
                 }
             }
             if(sentMails > 0)
             {
+                DBHelper.WriteLog("Send mail", 0, "Info", $"Wysłano {sentMails} przypomnień", loggedUserId);
                 MainForm.ShowOk($"Wysłano {sentMails} przypomnień");
             }
         }

@@ -42,6 +42,7 @@ namespace ClubManagement.Modules
                     txt_login.Text = "";
                     txt_name.Text = "";
                     RefreshData();
+                    DBHelper.WriteLog("Register user", 0, "Info", $"Zarejestrowano nowego użytwkonika z loginem: {txt_login.Text}", loggedUserId);
                     ShowOk("Zarejestrowano pomyślnie");
                 }
                 else if (res == -1)
@@ -61,6 +62,7 @@ namespace ClubManagement.Modules
             if (int.TryParse(((DataRowView)cb_usersList.SelectedItem).Row["id"].ToString(), out userId))
             {
                 DBHelper.InsertUpdate($"update dbo.Users set Use_Password=NULL, Use_LastModifiedDate= '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', Use_LastModifiedUser={loggedUserId} where Use_Id={userId}");
+                DBHelper.WriteLog("Reset password", 0, "Info", $"Zresetowano hasło dla użytnownika o ID: {userId}", loggedUserId);
                 ShowOk("Hasło zostało zresetowane");
             }
         }
@@ -71,6 +73,7 @@ namespace ClubManagement.Modules
             if (int.TryParse(((DataRowView)cb_usersList.SelectedItem).Row["id"].ToString(), out userId))
             {
                 DBHelper.InsertUpdate($"update dbo.Users set use_isActive=0, Use_LastModifiedDate='{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', Use_LastModifiedUser={loggedUserId} where Use_Id={userId}");
+                DBHelper.WriteLog("Archive user", 0, "Info", $"Zarchiwizowano użytnownika o ID: {userId}", loggedUserId);
                 ShowOk("Użytkownik został zarchiwizowany");
             }
             RefreshData();

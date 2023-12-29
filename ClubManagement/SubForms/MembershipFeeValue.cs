@@ -25,7 +25,14 @@ namespace ClubManagement.SubForms
         }
         private void btn_saveMembershipFeeValue_Click(object sender, EventArgs e)
         {
-            DBHelper.InsertUpdate($"update dbo.config set conf_value = '{spinEdit1.Value}' where conf_key = 'MEMBERSHIP_FEE_VALUE'");
+            if(DBHelper.InsertUpdate($"update dbo.config set conf_value = '{spinEdit1.Value}' where conf_key = 'MEMBERSHIP_FEE_VALUE'"))
+            {
+                DBHelper.WriteLog("Update fee value", 0, "Info", $"Zaktualizowano wartość składki: {spinEdit1.Value}", MainForm.loggedUserId);
+            }
+            else
+            {
+                DBHelper.WriteLog("Update fee value", -1, "Error", $"Nie udało się zaktualizować wartość składki: {spinEdit1.Value}", MainForm.loggedUserId);
+            }
             this.Close();
         }
     }

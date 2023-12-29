@@ -75,20 +75,34 @@ namespace ClubManagement.Modules
                                                             END
                                                     WHERE PlF_PlayerId = {id} 
                                                         AND MONTH(PlF_DueDate) = {month}"))
-                                    settledPayments++;
+                                    {
+                                        settledPayments++;
+                                        DBHelper.WriteLog("Settle payment", 0, "Info", $"Rozliczono płatność dla zawodnika o ID: {id} z miesiąca: {month} na kwotę {row["Kwota[zl]"]}", loggedUserId);
+                                    }
+                                    else
+                                    {
+                                        DBHelper.WriteLog("Settle payment", -1, "Error", $"Nie udało się rozliczyć płatności dla zawodnika o ID: {id} z miesiąca: {month}", loggedUserId);
+                                    }
+
                                 }
                             }
                         }
-                        if(settledPayments > 0)
-                        MainForm.ShowOk($"Pomyślnie rozliczono {settledPayments} płatności");
+                        if (settledPayments > 0)
+                        {
+                            DBHelper.WriteLog("Settle payment", 0, "Info", $"Pomyślnie rozliczono {settledPayments} płatności", loggedUserId);
+                            MainForm.ShowOk($"Pomyślnie rozliczono {settledPayments} płatności");
+                        }
+
                         RefreshData();
                     }
                     catch (IOException)
                     {
+                        DBHelper.WriteLog("Settle payment", -1, "Error", $"Plik jest używany przez inny proces, proszę zamknąć programy w których otwarty jest plik", loggedUserId);
                         MainForm.ShowError("Plik jest używany przez inny proces, proszę zamknąć programy w których otwarty jest plik.");
                     }
                     catch (Exception ex)
                     {
+                        DBHelper.WriteLog("Settle payment", -1, "Error", ex.Message, loggedUserId);
                         MainForm.ShowError(ex.Message);
                     }
 
