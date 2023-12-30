@@ -256,7 +256,6 @@ namespace ClubManagement
             this.Profile.Appearance.Pressed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Profile.Appearance.Pressed.BackColor2 = ((System.Drawing.Color)(resources.GetObject("Profile.Appearance.Pressed.BackColor2")));
             this.Profile.Appearance.Pressed.Options.UseBackColor = true;
-            this.Profile.ImageOptions.Image = global::ClubManagement.Properties.Resources.customer_32x32;
             this.Profile.Name = "Profile";
             this.Profile.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             resources.ApplyResources(this.Profile, "Profile");
@@ -283,6 +282,7 @@ namespace ClubManagement
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.IconOptions.Image = global::ClubManagement.Properties.Resources.favicon;
             this.KeyPreview = true;
             this.LookAndFeel.SkinName = "Office 2016 Black";
             this.LookAndFeel.UseDefaultLookAndFeel = false;

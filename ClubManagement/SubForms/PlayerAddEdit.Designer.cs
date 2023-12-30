@@ -642,6 +642,7 @@ namespace ClubManagement.SubForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 471);
             this.Controls.Add(this.tablePanel1);
+            this.IconOptions.Image = global::ClubManagement.Properties.Resources.favicon;
             this.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

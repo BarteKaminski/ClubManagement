@@ -34,11 +34,8 @@ namespace ClubManagement.Modules
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.ccb_statisticsTypes = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
+            this.btn_exportPdf = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Imię = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,23 +49,26 @@ namespace ClubManagement.Modules
             this.ŻółteKartki = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CzerwoneKartki = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_exportPdf = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_exportChart = new DevExpress.XtraEditors.SimpleButton();
+            this.ccb_statisticsTypes = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
-            this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
-            this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ccb_statisticsTypes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
             this.tablePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ccb_statisticsTypes.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel2
@@ -123,57 +123,6 @@ namespace ClubManagement.Modules
             this.xtraTabPage1.Size = new System.Drawing.Size(1089, 516);
             this.xtraTabPage1.Text = "Statystyki";
             // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.tablePanel1);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1089, 516);
-            this.xtraTabPage2.Text = "Wykresy";
-            // 
-            // tablePanel1
-            // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 41F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F)});
-            this.tablePanel1.Controls.Add(this.btn_exportChart);
-            this.tablePanel1.Controls.Add(this.ccb_statisticsTypes);
-            this.tablePanel1.Controls.Add(this.chartControl1);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1089, 516);
-            this.tablePanel1.TabIndex = 0;
-            // 
-            // ccb_statisticsTypes
-            // 
-            this.tablePanel1.SetColumn(this.ccb_statisticsTypes, 2);
-            this.ccb_statisticsTypes.Location = new System.Drawing.Point(823, 13);
-            this.ccb_statisticsTypes.Name = "ccb_statisticsTypes";
-            this.ccb_statisticsTypes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.ccb_statisticsTypes.Properties.Appearance.Options.UseFont = true;
-            this.ccb_statisticsTypes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tablePanel1.SetRow(this.ccb_statisticsTypes, 0);
-            this.ccb_statisticsTypes.Size = new System.Drawing.Size(263, 24);
-            this.ccb_statisticsTypes.TabIndex = 2;
-            this.ccb_statisticsTypes.EditValueChanged += new System.EventHandler(this.ccb_statisticsTypes_EditValueChanged);
-            // 
-            // chartControl1
-            // 
-            this.tablePanel1.SetColumn(this.chartControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.chartControl1, 3);
-            this.chartControl1.Legend.Name = "Default Legend";
-            this.chartControl1.Location = new System.Drawing.Point(3, 53);
-            this.chartControl1.Name = "chartControl1";
-            this.tablePanel1.SetRow(this.chartControl1, 1);
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.Size = new System.Drawing.Size(1083, 460);
-            this.chartControl1.TabIndex = 1;
-            // 
             // tablePanel3
             // 
             this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
@@ -189,6 +138,17 @@ namespace ClubManagement.Modules
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
             this.tablePanel3.Size = new System.Drawing.Size(1089, 516);
             this.tablePanel3.TabIndex = 0;
+            // 
+            // btn_exportPdf
+            // 
+            this.tablePanel3.SetColumn(this.btn_exportPdf, 1);
+            this.btn_exportPdf.Location = new System.Drawing.Point(824, 4);
+            this.btn_exportPdf.Name = "btn_exportPdf";
+            this.tablePanel3.SetRow(this.btn_exportPdf, 0);
+            this.btn_exportPdf.Size = new System.Drawing.Size(262, 41);
+            this.btn_exportPdf.TabIndex = 4;
+            this.btn_exportPdf.Text = "Eksport PDF";
+            this.btn_exportPdf.Click += new System.EventHandler(this.btn_exportPdf_Click);
             // 
             // gridControl1
             // 
@@ -331,16 +291,30 @@ namespace ClubManagement.Modules
             this.Id.FieldName = "Id";
             this.Id.Name = "Id";
             // 
-            // btn_exportPdf
+            // xtraTabPage2
             // 
-            this.tablePanel3.SetColumn(this.btn_exportPdf, 1);
-            this.btn_exportPdf.Location = new System.Drawing.Point(824, 4);
-            this.btn_exportPdf.Name = "btn_exportPdf";
-            this.tablePanel3.SetRow(this.btn_exportPdf, 0);
-            this.btn_exportPdf.Size = new System.Drawing.Size(262, 41);
-            this.btn_exportPdf.TabIndex = 4;
-            this.btn_exportPdf.Text = "Eksport PDF";
-            this.btn_exportPdf.Click += new System.EventHandler(this.btn_exportPdf_Click);
+            this.xtraTabPage2.Controls.Add(this.tablePanel1);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(1089, 516);
+            this.xtraTabPage2.Text = "Wykresy";
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 41F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20F)});
+            this.tablePanel1.Controls.Add(this.btn_exportChart);
+            this.tablePanel1.Controls.Add(this.ccb_statisticsTypes);
+            this.tablePanel1.Controls.Add(this.chartControl1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(1089, 516);
+            this.tablePanel1.TabIndex = 0;
             // 
             // btn_exportChart
             // 
@@ -352,6 +326,32 @@ namespace ClubManagement.Modules
             this.btn_exportChart.TabIndex = 3;
             this.btn_exportChart.Text = "Eksportuj PDF";
             this.btn_exportChart.Click += new System.EventHandler(this.btn_exportChart_Click);
+            // 
+            // ccb_statisticsTypes
+            // 
+            this.tablePanel1.SetColumn(this.ccb_statisticsTypes, 2);
+            this.ccb_statisticsTypes.Location = new System.Drawing.Point(823, 13);
+            this.ccb_statisticsTypes.Name = "ccb_statisticsTypes";
+            this.ccb_statisticsTypes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.ccb_statisticsTypes.Properties.Appearance.Options.UseFont = true;
+            this.ccb_statisticsTypes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tablePanel1.SetRow(this.ccb_statisticsTypes, 0);
+            this.ccb_statisticsTypes.Size = new System.Drawing.Size(263, 24);
+            this.ccb_statisticsTypes.TabIndex = 2;
+            this.ccb_statisticsTypes.EditValueChanged += new System.EventHandler(this.ccb_statisticsTypes_EditValueChanged);
+            // 
+            // chartControl1
+            // 
+            this.tablePanel1.SetColumn(this.chartControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.chartControl1, 3);
+            this.chartControl1.Legend.Name = "Default Legend";
+            this.chartControl1.Location = new System.Drawing.Point(3, 53);
+            this.chartControl1.Name = "chartControl1";
+            this.tablePanel1.SetRow(this.chartControl1, 1);
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl1.Size = new System.Drawing.Size(1083, 460);
+            this.chartControl1.TabIndex = 1;
             // 
             // ucStatistics
             // 
@@ -365,16 +365,16 @@ namespace ClubManagement.Modules
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
-            this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ccb_statisticsTypes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
             this.tablePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ccb_statisticsTypes.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
 
         }

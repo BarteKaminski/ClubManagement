@@ -177,6 +177,7 @@ namespace ClubManagement
             this.ClientSize = new System.Drawing.Size(336, 166);
             this.Controls.Add(this.tablePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Image = global::ClubManagement.Properties.Resources.favicon;
             this.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MaximizeBox = false;

@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells, Version=23.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Cells.23.1.0\lib\net40\Aspose.Cells.dll</HintPath>
@@ -234,6 +238,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\favicon.ico" />
     <Content Include="Resources\customer_32x32.png" />
   </ItemGroup>
   <ItemGroup />

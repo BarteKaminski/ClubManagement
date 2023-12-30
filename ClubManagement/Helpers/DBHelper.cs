@@ -141,7 +141,7 @@ namespace ClubManagement.Helpers
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MainForm.ShowError("Błąd podczas łączenia z bazą danych");
                 return false;
@@ -246,7 +246,7 @@ namespace ClubManagement.Helpers
                     com.Parameters.AddWithValue("@Log_Result", result);
                     com.Parameters.AddWithValue("@Log_Status", status);
                     com.Parameters.AddWithValue("@Log_Message", message);
-                    com.Parameters.AddWithValue("@Log_UserCreated", loggedUserId);
+                    com.Parameters.AddWithValue("@Log_CreateUser", loggedUserId);
 
                     com.ExecuteNonQuery();
                 }

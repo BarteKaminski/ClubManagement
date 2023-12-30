@@ -14,9 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
-using iTextSharp.text.pdf;
 using static ClubManagement.MainForm;
 using DevExpress.XtraPrinting;
+using System.Reflection;
 
 namespace ClubManagement.Modules
 {
@@ -146,7 +146,9 @@ namespace ClubManagement.Modules
 
                 gridControl1.Invoke(new Action(delegate ()
                 {
-                    filePath = $@"C:\Users\Bartek\Desktop\Inż\Statistic\Tables\Statystyki_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf";
+                    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    //string directoryPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                    filePath = Path.Combine(baseDirectory, $@"Statistics\Tables\Statystyki_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf");
                     gridControl1.ExportToPdf(filePath);
                     System.Diagnostics.Process.Start(filePath);
                     DBHelper.WriteLog("Export table PDF", 0, "Info", $"Wyeksportowano tabelę statystk do {filePath}", loggedUserId);
@@ -178,7 +180,8 @@ namespace ClubManagement.Modules
 
                 chartControl1.Invoke(new Action(delegate ()
                 {
-                    filePath = $@"C:\Users\Bartek\Desktop\Inż\Statistic\Charts\Wykres_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf";
+                    string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    filePath = Path.Combine(baseDirectory, $@"Statistics\Charts\Wykres_{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}.pdf");
                     link.ExportToPdf(filePath);
                     System.Diagnostics.Process.Start(filePath);
                     DBHelper.WriteLog("Export chart PDF", 0, "Info", $"Wyeksportowano wykres statystk do {filePath}", loggedUserId);
