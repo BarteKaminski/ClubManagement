@@ -142,10 +142,11 @@ namespace ClubManagement.Modules
             // btn_exportPdf
             // 
             this.tablePanel3.SetColumn(this.btn_exportPdf, 1);
-            this.btn_exportPdf.Location = new System.Drawing.Point(824, 4);
+            this.btn_exportPdf.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_exportPdf.Location = new System.Drawing.Point(824, 3);
             this.btn_exportPdf.Name = "btn_exportPdf";
             this.tablePanel3.SetRow(this.btn_exportPdf, 0);
-            this.btn_exportPdf.Size = new System.Drawing.Size(262, 41);
+            this.btn_exportPdf.Size = new System.Drawing.Size(262, 33);
             this.btn_exportPdf.TabIndex = 4;
             this.btn_exportPdf.Text = "Eksport PDF";
             this.btn_exportPdf.Click += new System.EventHandler(this.btn_exportPdf_Click);
@@ -180,6 +181,7 @@ namespace ClubManagement.Modules
             this.Id});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // Imię
             // 
@@ -319,10 +321,11 @@ namespace ClubManagement.Modules
             // btn_exportChart
             // 
             this.tablePanel1.SetColumn(this.btn_exportChart, 1);
-            this.btn_exportChart.Location = new System.Drawing.Point(554, 6);
+            this.btn_exportChart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_exportChart.Location = new System.Drawing.Point(554, 3);
             this.btn_exportChart.Name = "btn_exportChart";
             this.tablePanel1.SetRow(this.btn_exportChart, 0);
-            this.btn_exportChart.Size = new System.Drawing.Size(263, 37);
+            this.btn_exportChart.Size = new System.Drawing.Size(263, 31);
             this.btn_exportChart.TabIndex = 3;
             this.btn_exportChart.Text = "Eksportuj PDF";
             this.btn_exportChart.Click += new System.EventHandler(this.btn_exportChart_Click);

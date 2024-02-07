@@ -66,7 +66,12 @@ namespace ClubManagement.SubForms
                 string postalCode = playerData.Rows[0]["Pla_PostalCode"].ToString();
                 string street = playerData.Rows[0]["Pla_Street"].ToString();
                 int houseNumber = Convert.ToInt32(playerData.Rows[0]["Pla_HouseNumber"]);
-                int flatNumber = Convert.ToInt32(playerData.Rows[0]["Pla_FlatNumber"]);
+                object flatNumberObject = playerData.Rows[0]["Pla_FlatNumber"];
+                int flatNumber = 0;
+                if (flatNumberObject != DBNull.Value)
+                {
+                    flatNumber = Convert.ToInt32(flatNumberObject);
+                }
                 string nick = playerData.Rows[0]["PlC_Nick"].ToString();
                 int positionId = Convert.ToInt32(playerData.Rows[0]["PlC_PositionId"]);
                 int number = Convert.ToInt32(playerData.Rows[0]["PlC_Number"]);
